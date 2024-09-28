@@ -1,11 +1,14 @@
 {
   "extends": "@tsconfig/node22",
-  "include": ["src/**/*"],
+  "include": ["./src/**/*"],
   "exclude": ["node_modules"],
   "compilerOptions": {
 
+    "paths": {
+      "@/*": ["./src/*"],
+    },
     /* Language and Environment */
-    "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "target": "es2022",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "lib": ["es6","dom"],                                /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
     "experimentalDecorators": true,                   /* Enable experimental support for legacy experimental decorators. */
@@ -17,7 +20,7 @@
     "resolveJsonModule": true,                           /* Enable importing .json files. */
 
     /* Emit */
-    "outDir": "lib",                                     /* Specify an output folder for all emitted files. */
+    "outDir": "dist",                                     /* Specify an output folder for all emitted files. */
 
     /* Interop Constraints */
     "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
@@ -28,5 +31,8 @@
 
     /* Completeness */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+  },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
   }
 }
