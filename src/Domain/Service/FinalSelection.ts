@@ -1,13 +1,13 @@
-import {EntryPerson} from "@/Domain/Entity/EntryPerson";
 import {SecondScreeningPassedPerson} from "@/Domain/Entity/SecondScreeningPassedPerson";
+import {FinalScreeningPassedPerson} from "@/Domain/Entity/FinalScreeningPassedPerson";
 
 /**
- * 二次選考
+ * 最終選考
  */
-export class SecondSelection {
-    static create(
-        person: EntryPerson
-    ): SecondScreeningPassedPerson {
-        return SecondScreeningPassedPerson.fromFirstScreeningPassedPerson(person);
+export class FinalSelection {
+    static exec(
+        person: SecondScreeningPassedPerson
+    ): FinalScreeningPassedPerson {
+        return FinalScreeningPassedPerson.fromSecondScreeningPassedPerson(person);
     }
 }

@@ -1,12 +1,12 @@
-export class Address {
+export class EducationalBackground {
     private constructor(
         readonly value: string
     ) {}
 
-    public static create(value: string): Address {
-        if (value.length < 1 || value.length > 255) {
-            throw new Error('The value must be between 1 and 255 characters.');
+    static create(value: string): EducationalBackground {
+        if (value.length < 1 || value.length > 1000) {
+            throw new Error('The value must be between 1 and 1000 characters.');
         }
-        return new Address(value);
+        return new EducationalBackground(value);
     }
 }

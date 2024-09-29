@@ -1,12 +1,12 @@
-export class Mei {
+export class Age {
     private constructor(
-        readonly value: string
+        readonly value: number
     ) {}
 
-    public static create(value: string): Mei {
-        if (value.length < 1 || value.length > 255) {
+    static create(value: number): Age {
+        if (value < 18 || value > 55) {
             throw new Error('The value must be between 1 and 255 characters.');
         }
-        return new Mei(value);
+        return new Age(value);
     }
 }
