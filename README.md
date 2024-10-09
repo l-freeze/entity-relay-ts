@@ -1,3 +1,7 @@
+[エンティティリレーとは？](https://speakerdeck.com/lfz/entity-relay)
+
+----
+
 ```bash
 git init
 npm install -g pnpm
